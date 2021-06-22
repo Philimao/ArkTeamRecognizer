@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/ArkTeamRecognizer/static/js/main.bff902ae.chunk.js",
+    "main.js.map": "/ArkTeamRecognizer/static/js/main.bff902ae.chunk.js.map",
+    "runtime-main.js": "/ArkTeamRecognizer/static/js/runtime-main.60d008ed.js",
+    "runtime-main.js.map": "/ArkTeamRecognizer/static/js/runtime-main.60d008ed.js.map",
+    "static/css/2.15a7a700.chunk.css": "/ArkTeamRecognizer/static/css/2.15a7a700.chunk.css",
+    "static/js/2.93b9c519.chunk.js": "/ArkTeamRecognizer/static/js/2.93b9c519.chunk.js",
+    "static/js/2.93b9c519.chunk.js.map": "/ArkTeamRecognizer/static/js/2.93b9c519.chunk.js.map",
+    "index.html": "/ArkTeamRecognizer/index.html",
+    "static/css/2.15a7a700.chunk.css.map": "/ArkTeamRecognizer/static/css/2.15a7a700.chunk.css.map",
+    "static/js/2.93b9c519.chunk.js.LICENSE.txt": "/ArkTeamRecognizer/static/js/2.93b9c519.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.60d008ed.js",
+    "static/css/2.15a7a700.chunk.css",
+    "static/js/2.93b9c519.chunk.js",
+    "static/js/main.bff902ae.chunk.js"
+  ]
+}

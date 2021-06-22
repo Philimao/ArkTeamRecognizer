@@ -1,12 +1,10 @@
 import React from "react";
-// import TeamRecog from "./TeamRecog";
-import GammaCV from "./GammaCV";
+import TeamRecog from "./TeamRecog";
 
 export default function App() {
   return (
     <div className="App">
-      {/*<TeamRecog />*/}
-      <GammaCV />
+      <TeamRecog />
     </div>
   );
 }

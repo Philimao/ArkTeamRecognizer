@@ -1,10 +1,10 @@
 import React from "react";
-import TeamRecog from "./TeamRecog";
+import TeamRecognizer from "./TeamRecognizer";
 
 export default function App() {
   return (
     <div className="App">
-      <TeamRecog />
+      <TeamRecognizer />
     </div>
   );
 }

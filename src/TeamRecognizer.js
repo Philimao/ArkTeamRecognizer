@@ -1,11 +1,10 @@
-import * as gm from "gammacv";
 import React, { useEffect, useState } from "react";
+import * as gm from "gammacv";
 import { mean, ckmeans, variance } from "simple-statistics";
 import { createWorker } from "tesseract.js";
-import { getImageData } from "gammacv";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function TeamRecog() {
+export default function TeamRecognizer() {
   const [ori, setOri] = useState();
   const [hough, setHough] = useState(false);
   const [low, setLow] = useState(0.6);
@@ -278,7 +277,7 @@ export default function TeamRecog() {
       let x = xStart,
         y = yLine1;
       for (let i = 0; i < 12; i++) {
-        const textData = getImageData(canvas, x, y, charW, textHeight);
+        const textData = gm.getImageData(canvas, x, y, charW, textHeight);
         x += charW + gapW;
         if (i === 5) {
           x = xStart;
@@ -334,7 +333,7 @@ export default function TeamRecog() {
       let x = xStart,
         y = yLine1;
       for (let i = 0; i < 12; i++) {
-        const textData = getImageData(canvas, x, y, iconSize, iconSize);
+        const textData = gm.getImageData(canvas, x, y, iconSize, iconSize);
         x += charW + gapW;
         if (i === 5) {
           x = xStart;

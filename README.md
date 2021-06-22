@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Arknights Team Recognizer
+## 明日方舟队伍识别器
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is still working in progress. Contact me if you are willing to help on OCR and image comparison.
 
-## Available Scripts
+## Idea
 
-In the project directory, you can run:
+This application is a part of ArkRecordWiki and developed by React. Since it is much more complicated in logic and independent in functionality, I make it a separate repo.
 
-### `yarn start`
+The total goal of this application is to recognize the team members and their skill from a screenshot. It could alleviate the burden of writing down all the name and skills of operators, especially for teams like 3-star and E1-Level1 teams which usually carry more operators than other categories.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Process
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Line Detection
+  - Canny
+  - Hough Transform
+  
+- Image Segmentation
+  - Unsupervised clustering to sort the lines
+  - Calculate dimension of gaps and char cards
+  - Render to canvas
+  
+- OCR
+  - Tesseract.js (poor result)
+  - PaddlePaddle OCR (Great but run in python env, in progress)
+  - Get the operator names 
+  
+- Skill recognition
+  - Fetch skill icons based on operator name
+  - Image comparison (in progress)
 
-### `yarn test`
+## Libraries
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- GammaCV
+  - A fantastic library provides Hough Transform function and other CV methods, which use tensor and gpu to accelerate the process
+  
+- Simple-statistics
+  - A light-weighted library to do some math. It offers great functions to generate 1-D clustering results (i.e. natural breaks)
+  
+- Tesseract.js
+  - It is quite convenient that it provides API for users, and the package itself is just some simple wrapper, but the result for Chinese is not satisfying, due to which it will be replaced later.
+  
+- Paddle OCR
+  - An open-source OCR library for mainly Chinese, composed of DB text detection, detection frame correction and CRNN text recognition with high accuracy but low space occupation. Everything perfect but not designed for a node server. I would like to take some time to adopt it. 
+  
+- Resemble.js
+  - The famous image comparison library to calculate similarity of two images. Working in progress.
+  
+## License
 
-### `yarn build`
+This project is using MIT license. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This sample images of the application is provided by reaving, Matsuka__, Terpenes, mirrorMK, Function____ and 卓荦zoro which will **NOT** be sharing.
